@@ -1,4 +1,8 @@
 #!/bin/sh -e
 
+# Script name: screenshooter
+# Descripion: Selects a region on the screen to capture, and copies it to the clipboard
+# Dependencies: shotgun hacksaw xclip 
+
 selection=$(hacksaw -f "-i %i -g %g")
 shotgun $selection - | xclip -t 'image/png' -selection clipboard
